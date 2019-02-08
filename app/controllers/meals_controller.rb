@@ -13,7 +13,6 @@ class MealsController < ApplicationController
   end
 
   def show
-    #current_user
     if user_signed_in?
       @meal = Meal.find(params[:id])
     else
