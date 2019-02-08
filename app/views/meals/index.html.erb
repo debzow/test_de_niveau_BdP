@@ -1,0 +1,10 @@
+<h1>Meals#index</h1>
+
+<% @meals.each do |meal|%>
+  <strong> <%= meal.name %></strong>
+  <div>
+    Image url : <%= meal.image_url %>
+  </div>
+  <%= link_to "Détail", meals_show_path(meal.id) %>
+  <br>
+<% end %>
