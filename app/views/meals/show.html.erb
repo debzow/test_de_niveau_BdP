@@ -1,0 +1,15 @@
+<h1>Meals#show</h1>
+
+<strong> <%= @meal.name %></strong>
+<div>
+  <% if @meal.image_url %>
+    <%= image_tag @meal.image_url %>
+  <% end %>
+</div>
+<br>
+<div>
+  Description : <%= @meal.description %>
+</div>
+<div>
+  Meal type : <%= @meal.meal_type.name %>
+</div>

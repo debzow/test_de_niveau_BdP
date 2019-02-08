@@ -1,0 +1,12 @@
+<h1>Meals#index</h1>
+
+<% @meals.each do |meal|%>
+  <strong><%= link_to meal.name, meals_show_path(meal.id) %></strong>
+  <div>
+    <% if meal.image_url %>
+      <%= image_tag meal.image_url %>
+    <% end %>
+  </div>
+  
+  <br>
+<% end %>
