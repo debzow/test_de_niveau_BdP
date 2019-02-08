@@ -3,7 +3,7 @@
 <strong> <%= @meal.name %></strong>
 <div>
   <% if @meal.image_url %>
-    <%= image_tag @meal.image_url %>
+    <%= image_tag @meal.image_url, :style => "width: 300px;" %>
   <% end %>
 </div>
 <br>
@@ -13,3 +13,14 @@
 <div>
   Meal type : <%= @meal.meal_type.name %>
 </div>
+<div>
+    Favori :
+</div>
+<div>
+  <% if current_user.favorit == @meal %>
+    Ce plat est déjà votre favori
+  <% else %>
+    <%= link_to "Ajouter comme plat favori", update_favorit_meal_path(@meal.id), method: :put, type:"button", class:"btn" %>
+  <% end %>
+</div>
+
