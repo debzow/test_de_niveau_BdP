@@ -1,2 +1,6 @@
 <h1>Tests#test_one</h1>
 <p>Find me in app/views/tests/test_one.html.erb</p>
+
+<% if flash[:alert] %>
+  <div class="alert alert-danger"> <%= flash[:alert] %> </div>
+<% end %>

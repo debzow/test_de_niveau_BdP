@@ -1,0 +1,32 @@
+<h1>Users#show</h1>
+
+<strong> Infos générales : </strong>
+<div>
+  
+  <%= @user.email %>
+  <%= @user.last_name %>
+  <%= @user.first_name %>
+</div>
+<br>
+
+<div>
+  <strong> Plat favorit : </strong>
+  <% if @user.favorit %>  
+    <div>  <%= @user.favorit.name %> </div>
+  <% else %>
+    <div> Aucun </div>
+  <% end %>
+  <br>
+
+  <strong> Restriction alimentaire: </strong>
+  <% if @user.restriction %>  
+    <div>  <%= @user.restriction.name %> </div>
+  <% else %>
+    <div> Aucune </div>
+  <% end %>
+  <div>
+    <%= link_to "Editer", users_edit_meal_restriction_path, class: "btn btn-primary" %>
+  </div>
+  <br>
+
+</div>
