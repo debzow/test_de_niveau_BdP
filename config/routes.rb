@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'users/show'
+  get 'users/edit_meal_restriction'
+  put 'users/update_meal_restriction'
   root 'tests#test_one'
   
   devise_for :users
