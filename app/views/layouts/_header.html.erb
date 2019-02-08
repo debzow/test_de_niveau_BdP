@@ -33,3 +33,9 @@
     </ul>
   </div>
 </nav>
+<!-- Flash messages -->
+<div>
+  <% if flash[:alert] %>
+    <div class="alert alert-danger"> <%= flash[:alert] %> </div>
+  <% end %>
+</div>
