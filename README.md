@@ -2,7 +2,7 @@
     
 ###  Ce travail à été réalisé par @Debzow
 
-### Voici le lien sur l'appli heroku :  
+### Voici le lien sur l'appli heroku :  https://pornfood.herokuapp.com/
   
 ## Si vous souhaitez le consutler en localhost voici la procédure à suivre :  
 *1* `cloner ce repo`  
