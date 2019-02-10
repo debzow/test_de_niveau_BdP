@@ -19,6 +19,11 @@
         <div class="container text-center">
           <strong>
             <%= link_to meal.name, meals_show_path(meal.id) %>
+            <% if user_signed_in? %>
+              <% if current_user.favorit == meal %>
+                <%= image_tag("favorit.png", :alt => "favorit", :style => "width: 20px;") %>
+              <% end %>
+            <% end %>
           </strong>
         </div>
         <br>

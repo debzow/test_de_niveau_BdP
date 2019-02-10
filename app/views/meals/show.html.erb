@@ -1,5 +1,11 @@
 <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h2> <%= @meal.name %> </h2>
+  <% if current_user.favorit == @meal %>
+    <div> 
+      <%= image_tag("favorit.png", :alt => "favorit", :style => "width: 20px;") %>
+    </div>
+    <br>
+  <% end %>
   <br>
   <div>
     <% if @meal.image_url %>
@@ -16,4 +22,5 @@
   <div>
     <%= link_to "Choisir comme favorie", update_favorit_meal_path(@meal.id), method: :put, class:"btn btn-primary" %>
   </div>
-</div>
+
+
