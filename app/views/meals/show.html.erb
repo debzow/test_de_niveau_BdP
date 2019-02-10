@@ -1,6 +1,12 @@
 <h1>Meals#show</h1>
 
 <strong> <%= @meal.name %></strong>
+<% if current_user.favorit == @meal %>
+  <div> 
+    <%= image_tag("favorit.png", :alt => "favorit", :style => "width: 20px;") %>
+  </div>
+  <br>
+<% end %>
 <div>
   <% if @meal.image_url %>
     <%= image_tag @meal.image_url, :style => "width: 300px;" %>
