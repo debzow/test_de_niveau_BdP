@@ -1,6 +1,6 @@
 # PornFood
     
-###  Ce travail à été réalisé par @Debzow
+###  Ce travail à été réalisé par @Debzow en environ 16h
 
 ### Voici le lien sur l'appli heroku :  https://pornfood.herokuapp.com/
   
