@@ -33,4 +33,20 @@ class UsersController < ApplicationController
       #err
     end
   end
+
+  def update_favorit_meal
+    if user_signed_in?
+      meal = Meal.find(params[:id])
+      if current_user.favorit == meal
+        flash[:warning]="Already favorit meal"
+      else
+        current_user.update(meal_id: meal.id)
+        flash[:success]="Successfully add as favorit meal"
+      end
+      redirect_to(meals_show_path(meal.id))
+    else
+      redirect_to(root_path)
+      flash[:alert]="You must be logged in"
+    end
+  end
 end

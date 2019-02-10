@@ -1,12 +1,18 @@
 <h1>Meals#index</h1>
 
 <% @meals.each do |meal|%>
-  <strong><%= link_to meal.name, meals_show_path(meal.id) %></strong>
+  <strong>
+    <%= link_to meal.name, meals_show_path(meal.id) %>
+    <% if user_signed_in? %>
+      <% if current_user.favorit == meal %>
+        <%= image_tag("favorit.png", :alt => "favorit", :style => "width: 20px;") %>
+      <% end %>
+    <% end %>
+  </strong>
   <div>
     <% if meal.image_url %>
-      <%= image_tag meal.image_url %>
+      <%= image_tag(meal.image_url, :style => "width: 300px;") %>
     <% end %>
   </div>
-  
   <br>
 <% end %>
