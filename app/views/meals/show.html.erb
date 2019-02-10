@@ -1,15 +1,19 @@
-<h1>Meals#show</h1>
-
-<strong> <%= @meal.name %></strong>
-<div>
-  <% if @meal.image_url %>
-    <%= image_tag @meal.image_url %>
-  <% end %>
-</div>
-<br>
-<div>
-  Description : <%= @meal.description %>
-</div>
-<div>
-  Meal type : <%= @meal.meal_type.name %>
+<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h2> <%= @meal.name %> </h2>
+  <br>
+  <div>
+    <% if @meal.image_url %>
+      <%= image_tag @meal.image_url, :style => "width: 300px;" %>
+    <% end %>
+  </div>
+  <br>
+  <div>
+    Déscription : <%= @meal.description %>
+  </div>
+  <div>
+    Type de plat : <%= @meal.meal_type.name %>
+  </div>
+  <div>
+    <%= link_to "Choisir comme favorie", update_favorit_meal_path(@meal.id), method: :put, class:"btn btn-primary" %>
+  </div>
 </div>

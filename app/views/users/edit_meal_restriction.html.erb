@@ -1,13 +1,10 @@
-<h1>Users#edit_meal_restriction</h1>
 
-<%= form_tag({controller: "users", action: "update_meal_restriction"}, method: :put) do %>
+<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h2>Veuillez éditer votre régime </h2>
+  <%= form_tag({controller: "users", action: "update_meal_restriction"}, method: :put) do %>
+    <div> Ce que vous ne pouvez pas manger : <%= select(:dropdown, :household_number, @meal_types, :selected => @restriction ) %> </div>
+    <br>
+    <%= submit_tag "Sauvegarder", :name => nil, class:"btn btn-primary" %>
+  <% end %>
 
-
-  <%= label_tag "Ma restriction alimentaire" %><br>
-  <%= select(:dropdown, :household_number, @meal_types, :selected => @restriction ) %><br>
-  
-  <%= submit_tag "Sauvegarder", :name => nil, class:"btn" %>
-
-
-
-<% end %>
+</div>
