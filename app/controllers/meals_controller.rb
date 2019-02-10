@@ -9,7 +9,6 @@ class MealsController < ApplicationController
     else
       @meals = Meal.all
     end
-
   end
 
   def show

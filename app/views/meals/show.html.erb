@@ -1,32 +1,26 @@
-<h1>Meals#show</h1>
-
-<strong> <%= @meal.name %></strong>
-<% if current_user.favorit == @meal %>
-  <div> 
-    <%= image_tag("favorit.png", :alt => "favorit", :style => "width: 20px;") %>
+<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h2> <%= @meal.name %> </h2>
+  <% if current_user.favorit == @meal %>
+    <div> 
+      <%= image_tag("favorit.png", :alt => "favorit", :style => "width: 20px;") %>
+    </div>
+    <br>
+  <% end %>
+  <br>
+  <div>
+    <% if @meal.image_url %>
+      <%= image_tag @meal.image_url, :style => "width: 300px;" %>
+    <% end %>
   </div>
   <br>
-<% end %>
-<div>
-  <% if @meal.image_url %>
-    <%= image_tag @meal.image_url, :style => "width: 300px;" %>
-  <% end %>
-</div>
-<br>
-<div>
-  Description : <%= @meal.description %>
-</div>
-<div>
-  Meal type : <%= @meal.meal_type.name %>
-</div>
-<div>
-    Favori :
-</div>
-<div>
-  <% if current_user.favorit == @meal %>
-    Ce plat est déjà votre favori
-  <% else %>
-    <%= link_to "Ajouter comme plat favori", update_favorit_meal_path(@meal.id), method: :put, type:"button", class:"btn" %>
-  <% end %>
-</div>
+  <div>
+    Déscription : <%= @meal.description %>
+  </div>
+  <div>
+    Type de plat : <%= @meal.meal_type.name %>
+  </div>
+  <div>
+    <%= link_to "Choisir comme favorie", update_favorit_meal_path(@meal.id), method: :put, class:"btn btn-primary" %>
+  </div>
+
 

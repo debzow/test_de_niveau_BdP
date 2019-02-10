@@ -1,32 +1,30 @@
-<h1>Users#show</h1>
-
-<strong> Infos générales : </strong>
-<div>
-  
-  <%= @user.email %>
-  <%= @user.last_name %>
-  <%= @user.first_name %>
-</div>
-<br>
-
-<div>
-  <strong> Plat favorit : </strong>
-  <% if @user.favorit %>  
-    <div>  <%= @user.favorit.name %> </div>
-  <% else %>
-    <div> Aucun </div>
-  <% end %>
+<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h2>Votre profile</h2>
   <br>
-
-  <strong> Restriction alimentaire: </strong>
-  <% if @user.restriction %>  
-    <div>  <%= @user.restriction.name %> </div>
-  <% else %>
-    <div> Aucune </div>
-  <% end %>
   <div>
-    <%= link_to "Editer", users_edit_meal_restriction_path, class: "btn btn-primary" %>
+    <strong> Infos de bases </strong>
+    <div> email : <%= @user.email %> </div>
+    <div> nom : <%= @user.last_name %> </div>
+    <div> prénom : <%= @user.first_name %> </div>
   </div>
   <br>
-
+  <div>
+    <strong> Plat favorie </strong>
+    <% if @user.favorit %>  
+      <div>  <%= @user.favorit.name %> </div>
+    <% else %>
+      <div> Aucun </div>
+    <% end %>
+    <br>
+    <strong> Ce que vous ne pouvez pas manger </strong>
+    <% if @user.restriction %>  
+      <div>  <%= @user.restriction.name %> </div>
+    <% else %>
+      <div> Aucune </div>
+    <% end %>
+    <div>
+      <%= link_to "Editer", users_edit_meal_restriction_path, class: "btn btn-primary" %>
+    </div>
+    <br>
+  </div>
 </div>
